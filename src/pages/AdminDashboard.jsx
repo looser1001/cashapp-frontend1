@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../assets/style.css';
 
-const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+const API_BASE_URL = import.meta.env.VITE_APP_BACKEND_URL || 'http://localhost:5000';
 
 const AdminDashboard = () => {
   const [data, setData] = useState([]);
@@ -12,20 +12,20 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('${API_BASE_URL}/api/data');
+      const res = await fetch("${API_BASE_URL}/api/data");
       const result = await res.json();
       setData(result);
     };
 
     const fetchClicks = async () => {
-      const res = await fetch('${API_BASE_URL}/api/clicks');
+      const res = await fetch("${API_BASE_URL}/api/clicks");
       const result = await res.json();
       setClicks(result);
       clickSound.play(); // optional: plays sound for new clicks
     };
 
     const checkAlert = async () => {
-      const res = await fetch('${API_BASE_URL}/api/check-alert');
+      const res = await fetch("${API_BASE_URL}/api/check-alert");
       const result = await res.json();
       if (result.alert && !alertOn) {
         alertSound.loop = true;

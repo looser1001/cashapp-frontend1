@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/style.css"; // We will put your CSS here
 
+const API_BASE_URL = import.meta.env.VITE_APP_BACKEND_URL || 'http://localhost:5000';
+
 const Home = () => {
   const navigate = useNavigate();
   const [time, setTime] = useState("");
@@ -18,7 +20,7 @@ const Home = () => {
   const currentTime = `Today at ${formattedHours}:${formattedMinutes} ${ampm}`;
   setTime(currentTime);
 
-  const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+  
 
   // === Click Tracking: Send device info to backend ===
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);

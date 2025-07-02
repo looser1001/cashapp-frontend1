@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import "../assets/style.css";
 
-const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+const API_BASE_URL = import.meta.env.VITE_APP_BACKEND_URL || 'http://localhost:5000';
 
 const Auth = () => {
   const [email, setEmail] = useState("");
