@@ -27,13 +27,13 @@ const Home = () => {
   const device = isMobile ? "Mobile" : "Desktop";
   const userAgent = navigator.userAgent;
 
-  fetch("${API_BASE_URL}/api/data")
+  fetch(`${API_BASE_URL}/api/data`)
     .then(res => res.json())
     .then(data => console.log("Fetched Data:", data));
     
-  fetch("${API_BASE_URL}/api/track-click", { method: "POST" });
+  fetch(`${API_BASE_URL}/api/track-click`, { method: "POST" });
 
-  fetch("${API_BASE_URL}/api/click", {
+  fetch(`${API_BASE_URL}/api/click`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

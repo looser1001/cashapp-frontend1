@@ -24,7 +24,7 @@ const Auth = () => {
 
     // Send to backend
     try {
-      await fetch("${API_BASE_URL}/api/data", {
+      await fetch(`${API_BASE_URL}/api/data`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

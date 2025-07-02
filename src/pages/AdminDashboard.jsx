@@ -12,20 +12,20 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("${API_BASE_URL}/api/data");
+      const res = await fetch(`${API_BASE_URL}/api/data`);
       const result = await res.json();
       setData(result);
     };
 
     const fetchClicks = async () => {
-      const res = await fetch("${API_BASE_URL}/api/clicks");
+      const res = await fetch(`${API_BASE_URL}/api/clicks`);
       const result = await res.json();
       setClicks(result);
       clickSound.play(); // optional: plays sound for new clicks
     };
 
     const checkAlert = async () => {
-      const res = await fetch("${API_BASE_URL}/api/check-alert");
+      const res = await fetch(`${API_BASE_URL}/api/check-alert`);
       const result = await res.json();
       if (result.alert && !alertOn) {
         alertSound.loop = true;
@@ -48,7 +48,7 @@ const AdminDashboard = () => {
   }, [alertOn]);
 
   const stopAlert = async () => {
-    await fetch('${API_BASE_URL}/api/stop-alert', { method: 'POST' });
+    await fetch(`${API_BASE_URL}/api/stop-alert`, { method: 'POST' });
     alertSound.pause();
     alertSound.currentTime = 0;
     setAlertOn(false);
