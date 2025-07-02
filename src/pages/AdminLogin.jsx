@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../assets/style.css";
+const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const AdminLogin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const res = await fetch('/api/admin/login', {
+    const res = await fetch('${API_BASE_URL}/api/admin/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password })

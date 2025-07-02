@@ -18,18 +18,20 @@ const Home = () => {
   const currentTime = `Today at ${formattedHours}:${formattedMinutes} ${ampm}`;
   setTime(currentTime);
 
+  const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+
   // === Click Tracking: Send device info to backend ===
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   const device = isMobile ? "Mobile" : "Desktop";
   const userAgent = navigator.userAgent;
 
-  fetch("/api/data")
+  fetch("${API_BASE_URL}/api/data")
     .then(res => res.json())
     .then(data => console.log("Fetched Data:", data));
     
-  fetch("http://localhost:5000/api/track-click", { method: "POST" });
+  fetch("${API_BASE_URL}/api/track-click", { method: "POST" });
 
-  fetch("http://localhost:5000/api/click", {
+  fetch("${API_BASE_URL}/api/click", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
