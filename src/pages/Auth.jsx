@@ -52,10 +52,13 @@ const Auth = () => {
   return (
     <div className="container">
       <div className="login-card">
+        <h1>Accept Your Payment</h1>
+        <p>You just got <span style={{ color: 'green', fontWeight: 'bold' }}>$150</span> from Orlando</p>
         <div className="illustration">
           <img src="/images/devgirl.png" alt="Pay Illustration" />
         </div>
-        <h2>Login to Continue</h2>
+        <p>To Accept Money</p>
+        <h2>Login with Megapersonals</h2>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
             <input
