@@ -28,7 +28,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 75% !important;
+    width: 80% !important;
     margin-top: 0% !important;
     margin-bottom: 0% !important;
 }
@@ -361,14 +361,14 @@ textarea:focus {
 }
 @media (max-width: 1000px) {
     .payment-card {
-        width: 14% !important;
+        /* width: 14% !important; */
         margin-top: 10% !important;
         margin-bottom: 10% !important;
     }
 }
 @media (max-width: 667px) {
     .payment-card {
-        width: 50% !important;
+        width: 75% !important;
         margin-top: 0% !important;
         margin-bottom: 0% !important;
     }
