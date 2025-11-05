@@ -67,7 +67,7 @@ body {
     font-size: 2.5em;
     font-weight: bold;
     margin-bottom: 6px;
-    margin-top: 70px;
+    margin-top: 33px;
 }
 
 .message {
@@ -356,7 +356,7 @@ textarea:focus {
         /* max-width: 350px; */
     }
     .amount {
-        margin-top: 60px;
+        /* margin-top: 60px; */
     }
 
 }
