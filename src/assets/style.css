@@ -79,7 +79,7 @@ body {
 .timestamp {
     color: gray;
     font-size: 0.9em;
-    margin-bottom: 90px;
+    /* margin-bottom: 90px; */
 }
 
 .actions {
